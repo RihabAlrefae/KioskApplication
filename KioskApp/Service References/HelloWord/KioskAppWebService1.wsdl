@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.hadeed-mmc.com/webservices" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.hadeed-mmc.com/webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.hadeed-mmc.com/webservices">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emppin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthenticateResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lang" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmpState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEmpStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getEmpStateResult" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStateResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePinResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayrool">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayroolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPayroolResult" nillable="true" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_Kiosk_number">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_Kiosk_numberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="get_Kiosk_numberResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesalstat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesalstatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatesalstatResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatethetrue_resault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="thetruth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="recordid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="restofthecash" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="servicenumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatethetrue_resaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatethetrue_resaultResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="paymentrecid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmpId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="serviceno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="paymentrecidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="paymentrecidResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="authinticatFilluser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="empid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="authinticatFilluserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="authinticatFilluserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCasettevalue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCasettevalueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCasettevalueResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="c2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="c3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="c4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="r1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="r2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="r3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="r4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="config1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="config2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="config3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="config4" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cassete_types">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_cassete_typesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_cassete_typesResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cst2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cst3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cst4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="set_cassettes_types">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cst1type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cst2type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cst3type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cst4type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="set_cassettes_typesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="set_cassettes_typesResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillprocess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usrid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="image1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tranid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst4" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillprocessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fillprocessResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillprocess1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usrid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="image1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tranid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oldcst4" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldconf4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newconf4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillprocess1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fillprocess1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatecurrentcasettevalue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcst4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rej1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rej2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rej3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rej4" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatecurrentcasettevalueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updatecurrentcasettevalueResult" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertvisit1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tranid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="paidsal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="salaryrec" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="repaymentrec" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="img1url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img2url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img3url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertvisit1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertvisit1Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertvisit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="kioskid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tranid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="empid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="paidsal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="salaryrec" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="repaymentrec" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="img1url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img2url" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="img3url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertvisitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertvisitResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="employeesalforrecipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="employeesalforreciptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FIX_SALARY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="REPAYMENT" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TOTAL_REPAYMENT" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OVERTIME" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MATCHING" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="REWARD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ADVANCE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LOAN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="WITHOUT_SALARY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NON_ATTENDANCE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SICKNESS" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DISCOUNT" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NET_PAY" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MONTH1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="YEAR1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOTES" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="employeerecompforrecipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="employeerecompforreciptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_2" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_3" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_4" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_5" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_6" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_7" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_8" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_9" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SERVICE_10" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TOTAL" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOTES" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="servicesnames">
+        <s:complexType />
+      </s:element>
+      <s:element name="servicesnamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERVICE10" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpName" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEmpStateSoapIn">
+    <wsdl:part name="parameters" element="tns:getEmpState" />
+  </wsdl:message>
+  <wsdl:message name="getEmpStateSoapOut">
+    <wsdl:part name="parameters" element="tns:getEmpStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateState" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePinSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePin" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePinSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayroolSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayrool" />
+  </wsdl:message>
+  <wsdl:message name="GetPayroolSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayroolResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_Kiosk_numberSoapIn">
+    <wsdl:part name="parameters" element="tns:get_Kiosk_number" />
+  </wsdl:message>
+  <wsdl:message name="get_Kiosk_numberSoapOut">
+    <wsdl:part name="parameters" element="tns:get_Kiosk_numberResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatesalstatSoapIn">
+    <wsdl:part name="parameters" element="tns:updatesalstat" />
+  </wsdl:message>
+  <wsdl:message name="updatesalstatSoapOut">
+    <wsdl:part name="parameters" element="tns:updatesalstatResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatethetrue_resaultSoapIn">
+    <wsdl:part name="parameters" element="tns:updatethetrue_resault" />
+  </wsdl:message>
+  <wsdl:message name="updatethetrue_resaultSoapOut">
+    <wsdl:part name="parameters" element="tns:updatethetrue_resaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="paymentrecidSoapIn">
+    <wsdl:part name="parameters" element="tns:paymentrecid" />
+  </wsdl:message>
+  <wsdl:message name="paymentrecidSoapOut">
+    <wsdl:part name="parameters" element="tns:paymentrecidResponse" />
+  </wsdl:message>
+  <wsdl:message name="authinticatFilluserSoapIn">
+    <wsdl:part name="parameters" element="tns:authinticatFilluser" />
+  </wsdl:message>
+  <wsdl:message name="authinticatFilluserSoapOut">
+    <wsdl:part name="parameters" element="tns:authinticatFilluserResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCasettevalueSoapIn">
+    <wsdl:part name="parameters" element="tns:getCasettevalue" />
+  </wsdl:message>
+  <wsdl:message name="getCasettevalueSoapOut">
+    <wsdl:part name="parameters" element="tns:getCasettevalueResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_cassete_typesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_cassete_types" />
+  </wsdl:message>
+  <wsdl:message name="get_cassete_typesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_cassete_typesResponse" />
+  </wsdl:message>
+  <wsdl:message name="set_cassettes_typesSoapIn">
+    <wsdl:part name="parameters" element="tns:set_cassettes_types" />
+  </wsdl:message>
+  <wsdl:message name="set_cassettes_typesSoapOut">
+    <wsdl:part name="parameters" element="tns:set_cassettes_typesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fillprocessSoapIn">
+    <wsdl:part name="parameters" element="tns:fillprocess" />
+  </wsdl:message>
+  <wsdl:message name="fillprocessSoapOut">
+    <wsdl:part name="parameters" element="tns:fillprocessResponse" />
+  </wsdl:message>
+  <wsdl:message name="fillprocess1SoapIn">
+    <wsdl:part name="parameters" element="tns:fillprocess1" />
+  </wsdl:message>
+  <wsdl:message name="fillprocess1SoapOut">
+    <wsdl:part name="parameters" element="tns:fillprocess1Response" />
+  </wsdl:message>
+  <wsdl:message name="updatecurrentcasettevalueSoapIn">
+    <wsdl:part name="parameters" element="tns:updatecurrentcasettevalue" />
+  </wsdl:message>
+  <wsdl:message name="updatecurrentcasettevalueSoapOut">
+    <wsdl:part name="parameters" element="tns:updatecurrentcasettevalueResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertvisit1SoapIn">
+    <wsdl:part name="parameters" element="tns:insertvisit1" />
+  </wsdl:message>
+  <wsdl:message name="insertvisit1SoapOut">
+    <wsdl:part name="parameters" element="tns:insertvisit1Response" />
+  </wsdl:message>
+  <wsdl:message name="insertvisitSoapIn">
+    <wsdl:part name="parameters" element="tns:insertvisit" />
+  </wsdl:message>
+  <wsdl:message name="insertvisitSoapOut">
+    <wsdl:part name="parameters" element="tns:insertvisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="employeesalforreciptSoapIn">
+    <wsdl:part name="parameters" element="tns:employeesalforrecipt" />
+  </wsdl:message>
+  <wsdl:message name="employeesalforreciptSoapOut">
+    <wsdl:part name="parameters" element="tns:employeesalforreciptResponse" />
+  </wsdl:message>
+  <wsdl:message name="employeerecompforreciptSoapIn">
+    <wsdl:part name="parameters" element="tns:employeerecompforrecipt" />
+  </wsdl:message>
+  <wsdl:message name="employeerecompforreciptSoapOut">
+    <wsdl:part name="parameters" element="tns:employeerecompforreciptResponse" />
+  </wsdl:message>
+  <wsdl:message name="servicesnamesSoapIn">
+    <wsdl:part name="parameters" element="tns:servicesnames" />
+  </wsdl:message>
+  <wsdl:message name="servicesnamesSoapOut">
+    <wsdl:part name="parameters" element="tns:servicesnamesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KioskAppWebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpName">
+      <wsdl:input message="tns:GetEmpNameSoapIn" />
+      <wsdl:output message="tns:GetEmpNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmpState">
+      <wsdl:input message="tns:getEmpStateSoapIn" />
+      <wsdl:output message="tns:getEmpStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateState">
+      <wsdl:input message="tns:UpdateStateSoapIn" />
+      <wsdl:output message="tns:UpdateStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePin">
+      <wsdl:input message="tns:UpdatePinSoapIn" />
+      <wsdl:output message="tns:UpdatePinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayrool">
+      <wsdl:input message="tns:GetPayroolSoapIn" />
+      <wsdl:output message="tns:GetPayroolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Kiosk_number">
+      <wsdl:input message="tns:get_Kiosk_numberSoapIn" />
+      <wsdl:output message="tns:get_Kiosk_numberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatesalstat">
+      <wsdl:input message="tns:updatesalstatSoapIn" />
+      <wsdl:output message="tns:updatesalstatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatethetrue_resault">
+      <wsdl:input message="tns:updatethetrue_resaultSoapIn" />
+      <wsdl:output message="tns:updatethetrue_resaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="paymentrecid">
+      <wsdl:input message="tns:paymentrecidSoapIn" />
+      <wsdl:output message="tns:paymentrecidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="authinticatFilluser">
+      <wsdl:input message="tns:authinticatFilluserSoapIn" />
+      <wsdl:output message="tns:authinticatFilluserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCasettevalue">
+      <wsdl:input message="tns:getCasettevalueSoapIn" />
+      <wsdl:output message="tns:getCasettevalueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_cassete_types">
+      <wsdl:input message="tns:get_cassete_typesSoapIn" />
+      <wsdl:output message="tns:get_cassete_typesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="set_cassettes_types">
+      <wsdl:input message="tns:set_cassettes_typesSoapIn" />
+      <wsdl:output message="tns:set_cassettes_typesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess">
+      <wsdl:input message="tns:fillprocessSoapIn" />
+      <wsdl:output message="tns:fillprocessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess1">
+      <wsdl:input message="tns:fillprocess1SoapIn" />
+      <wsdl:output message="tns:fillprocess1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatecurrentcasettevalue">
+      <wsdl:input message="tns:updatecurrentcasettevalueSoapIn" />
+      <wsdl:output message="tns:updatecurrentcasettevalueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit1">
+      <wsdl:input message="tns:insertvisit1SoapIn" />
+      <wsdl:output message="tns:insertvisit1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit">
+      <wsdl:input message="tns:insertvisitSoapIn" />
+      <wsdl:output message="tns:insertvisitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="employeesalforrecipt">
+      <wsdl:input message="tns:employeesalforreciptSoapIn" />
+      <wsdl:output message="tns:employeesalforreciptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="employeerecompforrecipt">
+      <wsdl:input message="tns:employeerecompforreciptSoapIn" />
+      <wsdl:output message="tns:employeerecompforreciptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="servicesnames">
+      <wsdl:input message="tns:servicesnamesSoapIn" />
+      <wsdl:output message="tns:servicesnamesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KioskAppWebServiceSoap" type="tns:KioskAppWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpName">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/GetEmpName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpState">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/getEmpState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateState">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/UpdateState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePin">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/UpdatePin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayrool">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/GetPayrool" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_Kiosk_number">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/get_Kiosk_number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesalstat">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/updatesalstat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatethetrue_resault">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/updatethetrue_resault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentrecid">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/paymentrecid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authinticatFilluser">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/authinticatFilluser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCasettevalue">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/getCasettevalue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cassete_types">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/get_cassete_types" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_cassettes_types">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/set_cassettes_types" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/fillprocess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess1">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/fillprocess1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatecurrentcasettevalue">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/updatecurrentcasettevalue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit1">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/insertvisit1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/insertvisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="employeesalforrecipt">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/employeesalforrecipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="employeerecompforrecipt">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/employeerecompforrecipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="servicesnames">
+      <soap:operation soapAction="http://www.hadeed-mmc.com/webservices/servicesnames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KioskAppWebServiceSoap12" type="tns:KioskAppWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpName">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/GetEmpName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmpState">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/getEmpState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateState">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/UpdateState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePin">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/UpdatePin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayrool">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/GetPayrool" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_Kiosk_number">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/get_Kiosk_number" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesalstat">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/updatesalstat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatethetrue_resault">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/updatethetrue_resault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="paymentrecid">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/paymentrecid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="authinticatFilluser">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/authinticatFilluser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCasettevalue">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/getCasettevalue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_cassete_types">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/get_cassete_types" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_cassettes_types">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/set_cassettes_types" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/fillprocess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillprocess1">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/fillprocess1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatecurrentcasettevalue">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/updatecurrentcasettevalue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit1">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/insertvisit1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertvisit">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/insertvisit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="employeesalforrecipt">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/employeesalforrecipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="employeerecompforrecipt">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/employeerecompforrecipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="servicesnames">
+      <soap12:operation soapAction="http://www.hadeed-mmc.com/webservices/servicesnames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KioskAppWebService">
+    <wsdl:port name="KioskAppWebServiceSoap" binding="tns:KioskAppWebServiceSoap">
+      <soap:address location="http://192.168.105.15/kioskservices/KioskAppWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KioskAppWebServiceSoap12" binding="tns:KioskAppWebServiceSoap12">
+      <soap12:address location="http://192.168.105.15/kioskservices/KioskAppWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

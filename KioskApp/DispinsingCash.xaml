@@ -1,0 +1,69 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DispinsingCash" 
+	x:Class="KioskApp.DispinsingCash"
+	x:Name="Window"
+	Height="768" Width="1030"  WindowStyle="None" ResizeMode="NoResize"  
+    WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF310802" Offset="0"/>
+            <GradientStop Color="#FFA14023" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <UserControl x:Uid="Wait_Screen"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	mc:Ignorable="d"
+	x:Name="Wait_Screen"
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Width="1024"
+	Height="768">
+        <UserControl.Background>
+            <!-- <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF310802" Offset="0"/>
+                <GradientStop Color="#FF9C3E22" Offset="1"/>
+            </LinearGradientBrush>-->
+            <ImageBrush ImageSource="backgroundimage\HADEEDBackground.png"/>
+        </UserControl.Background>
+        <Grid x:Name="LayoutRoot">
+            <Canvas x:Uid="background" x:Name="background" FlowDirection="LeftToRight"
+			Height="768"
+			UseLayoutRounding="False"
+			Width="1024">
+                <TextBlock x:Name="TextBlock_1" x:Uid="TextBlock_1" TextWrapping="Wrap"
+				VerticalAlignment="Top"
+				FontFamily="/KioskApp;component/Fonts/#PT Heading"
+				FontSize="53.333"
+				HorizontalAlignment="Center"
+				Foreground="Black"
+				Canvas.Left="144" Canvas.Top="280" Height="201" Width="742" TextAlignment="Center" FontWeight="Bold"><Run FlowDirection="RightToLeft" Language="ar-sy" Text="يتم الان صرف المبلغ الرجاء الانتظار"/><LineBreak/><Run FlowDirection="RightToLeft" Language="ar-sy" Text="يرجى التأكد من المبلغ"/><LineBreak/><Run FlowDirection="RightToLeft" Language="ar-sy" Text=" "/></TextBlock>
+                <TextBlock x:Name="TextBlock_1_Copy" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="53.333"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="629" Canvas.Top="476" Height="120" Width="139" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_1_Copy1" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="53.333"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="446" Canvas.Top="476" Height="120" Width="139" TextAlignment="Center" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_1_Copy2" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="53.333"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="271" Canvas.Top="476" Height="120" Width="139" TextAlignment="Center" FontWeight="Bold"/>
+                <!-- <TextBlock x:Name="alarm_text" Canvas.Left="361" TextWrapping="Wrap"  Canvas.Top="26" Height="239" Width="285" Foreground="#FFDA0000" FontSize="100" FontFamily="/KioskApp;component/Fonts/#PT Heading" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,-5,0" TextAlignment="Center"/>-->
+            </Canvas>
+        </Grid>
+    </UserControl>
+</Window>

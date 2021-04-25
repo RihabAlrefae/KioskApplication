@@ -1,0 +1,209 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="KioskApp.FillProcess"
+     xmlns:k="clr-namespace:LoginModule.Keyboard"
+	x:Name="Window"
+	Title="FillProcess"
+		Height="768" Width="1030"  WindowStyle="None" ResizeMode="NoResize"  
+		WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF310802" Offset="0"/>
+            <GradientStop Color="#FFA14023" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <UserControl x:Uid="fill_process"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	mc:Ignorable="d"
+	x:Name="fill_process"
+	d:DesignWidth="1024" d:DesignHeight="768"
+	Width="1024"
+	Height="768">
+        <UserControl.Background>
+            <!-- <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF310802" Offset="0"/>
+                <GradientStop Color="#FF9C3E22" Offset="1"/>
+            </LinearGradientBrush>-->
+            <ImageBrush ImageSource="backgroundimage\HADEEDBackground.png"/>
+        </UserControl.Background>
+
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="355*"/>
+                <RowDefinition Height="78*"/>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="202*"/>
+            </Grid.RowDefinitions>
+            <Canvas x:Uid="background" x:Name="background" FlowDirection="LeftToRight"
+			UseLayoutRounding="False" Grid.RowSpan="5">
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="860" Canvas.Top="398" Height="45" Width="119" TextAlignment="Right" FontWeight="Bold" Text="الدرج 1"/>
+                <TextBox k:TouchScreenKeyboard.TouchScreenKeyboard="true" x:Name="newcst1" Height="61" Canvas.Left="291" TextWrapping="Wrap" Canvas.Top="390" Width="226" Background="{x:Null}" FontSize="53.333" TextAlignment="Center" FontFamily="Adobe Naskh Medium" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Text="0"/>
+                <TextBox k:TouchScreenKeyboard.TouchScreenKeyboard="true" x:Name="newcst2" Height="61" Canvas.Left="291" TextWrapping="Wrap" Canvas.Top="457" Width="226" Background="{x:Null}" FontSize="53.333" TextAlignment="Center" FontFamily="Adobe Naskh Medium" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Text="0"/>
+                <TextBox k:TouchScreenKeyboard.TouchScreenKeyboard="true" x:Name="newcst3" Height="61" Canvas.Left="291" TextWrapping="Wrap" Canvas.Top="523" Width="226" Background="{x:Null}" FontSize="53.333" TextAlignment="Center" FontFamily="Adobe Naskh Medium" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Text="0"/>
+                <TextBox  k:TouchScreenKeyboard.TouchScreenKeyboard="true"  x:Name="newcst4" Height="61" Canvas.Left="291" TextWrapping="Wrap" Canvas.Top="589" Width="226" Background="{x:Null}" FontSize="53.333" TextAlignment="Center" FontFamily="Adobe Naskh Medium" FontWeight="Bold" BorderBrush="Black" BorderThickness="2" Text="0"/>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="861" Canvas.Top="465" Height="44" Width="118" TextAlignment="Right" FontWeight="Bold" Text="الدرج 2"/>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="861" Canvas.Top="531" Height="44" Width="119" TextAlignment="Right" FontWeight="Bold" Text="الدرج 3"/>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="861" Canvas.Top="597" Height="44" Width="118" TextAlignment="Right" FontWeight="Bold" Text="الردج 4"/>
+                <TextBlock x:Name="firstcasette1" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="575" Canvas.Top="398" Height="44" Width="234" TextAlignment="Center" Text="1000" FontWeight="Bold" RenderTransformOrigin="0.786,0.5"/>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="545" Canvas.Top="248" Width="292" TextAlignment="Center" UseLayoutRounding="True" LineHeight="1"><Run FlowDirection="RightToLeft" Language="ar-sy" Text="عدد الاوراق النقدية"/></TextBlock>
+                <TextBlock x:Name="secondcasette2" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="573" Canvas.Top="465" Height="44" Width="234" TextAlignment="Center" Text="1000" FontWeight="Bold"/>
+                <TextBlock x:Name="thirdcasette3" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="573" Canvas.Top="531" Height="44" Width="234" TextAlignment="Center" Text="1000" FontWeight="Bold"/>
+                <TextBlock x:Name="forthcasette4" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="573" Canvas.Top="597" Height="44" Width="234" TextAlignment="Center" Text="1000" FontWeight="Bold"/>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="574" Canvas.Top="301" Height="66" Width="235" TextAlignment="Center" UseLayoutRounding="True" LineHeight="1"><Run FlowDirection="RightToLeft" Language="ar-sy" Text=" الحالي"/></TextBlock>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="262" Canvas.Top="248" Width="284" TextAlignment="Center" UseLayoutRounding="True" LineHeight="1"><Run FlowDirection="RightToLeft" Language="ar-sy" Text="عدد الاوراق النقدية"/></TextBlock>
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="292" Canvas.Top="301" Height="65" Width="225" TextAlignment="Center" UseLayoutRounding="True" LineHeight="1"><Run FlowDirection="RightToLeft" Language="ar-sy" Text="الجديد"/></TextBlock>
+                <Button x:Name="btn_ok" x:Uid="Button_1"
+                	Style="{DynamicResource SubmitButton}"
+                	Canvas.Left="567"
+                	Canvas.Top="120"
+                	IsEnabled="true" IsCancel="True" Content="موافـق" Click="btn_ok_Click" FontSize="42.667" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/KioskApp;component/Fonts/#Arial" Height="67" FontWeight="Bold"/>
+                <Button x:Uid="btnLogOut" x:Name="btnLogOut"
+                	Content="خروج"
+                	Style="{DynamicResource SubmitButton}"
+                	HorizontalAlignment="Right"
+                	Click="btnLogOut_Click" FontFamily="/KioskApp;component/Fonts/#Arial" FontSize="42.667" Height="67" Canvas.Left="186" Canvas.Top="120" FontWeight="Bold" />
+                <TextBlock x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#PT Heading"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="37" Canvas.Top="261" Height="92" Width="225" TextAlignment="Center" UseLayoutRounding="True" LineHeight="1"><Run FlowDirection="RightToLeft" Language="ar-sy" Text="المرتجع"/></TextBlock>
+                <TextBlock x:Name="reject1" x:Uid="TextBlockrej1_1" TextWrapping="Wrap"
+                	VerticalAlignment="Center"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="28" Canvas.Top="390" Height="61" Width="234" TextAlignment="Center" Text="0" FontWeight="Bold" RenderTransformOrigin="0.786,0.5"/>
+                <TextBlock x:Name="reject4" x:Uid="TextBlockrej2_1" TextWrapping="Wrap"
+                	VerticalAlignment="Center" 
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="28" Canvas.Top="589" Height="61" Width="234" TextAlignment="Center" Text="0" FontWeight="Bold"/>
+                <TextBlock x:Name="reject2" x:Uid="TextBlockrej1_1" TextWrapping="Wrap"
+                	VerticalAlignment="Center"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="28" Canvas.Top="457" Height="61" Width="234" TextAlignment="Center" Text="0" FontWeight="Bold" RenderTransformOrigin="0.786,0.5"/>
+                <TextBlock x:Name="reject3" x:Uid="TextBlockrej1_1" TextWrapping="Wrap"
+                	VerticalAlignment="Center"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="28" Canvas.Top="523" Height="61" Width="234" TextAlignment="Center" Text="0" FontWeight="Bold" RenderTransformOrigin="0.786,0.5"/>
+                <TextBlock Canvas.Left="933" TextWrapping="Wrap"  Height="107" Width="91" MouseDown="TextBlock_MouseDown"/>
+                <TextBlock x:Name="TextBlock_type1" x:Uid="TextBlock_type1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="746" Canvas.Top="398" Height="45" Width="119" TextAlignment="Right" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_type2" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="747" Canvas.Top="465" Height="44" Width="118" TextAlignment="Right" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_type3" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="747" Canvas.Top="531" Height="44" Width="119" TextAlignment="Right" FontWeight="Bold"/>
+                <TextBlock x:Name="TextBlock_type4" x:Uid="TextBlock_1" TextWrapping="Wrap"
+                	VerticalAlignment="Top"
+                	FontFamily="/KioskApp;component/Fonts/#Arial"
+                	FontSize="40"
+                	HorizontalAlignment="Center"
+                	Foreground="Black"
+                	Canvas.Left="747" Canvas.Top="597" Height="44" Width="118" TextAlignment="Right" FontWeight="Bold"/>
+            </Canvas>
+        </Grid>
+    </UserControl>
+</Window>
